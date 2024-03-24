@@ -7,12 +7,16 @@
 function speedDector(speedInput){
     let response = "";
     let demerits;
-
+    //Checks if speedInput is less than zero.
     if (speedInput < 0){
         response = "Null";
-    }else if(speedInput >= 0 && speedInput <=70){
+    }
+   //Checks if speedInput is greater than zero but less than 70. 
+    else if(speedInput >= 0 && speedInput <=70){
         response = "Ok";
-    }else{
+    }
+    //Calculate the number of demerit points for every 5km/s above the speed limit 70.
+    else{
         let perPoint = 5;
         let diff = speedInput - 70;
         demerits = Math.floor(diff / perPoint);
